@@ -44,11 +44,14 @@ tqdm>=4.66.0                      # Progress bars
 requests>=2.32.0
 
 
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
 streamlit
 python-dotenv
 yt-dlp
 pydub
 static-ffmpeg
+audioop-lts; python_version >= "3.13"
 langchain-core
 langchain-groq
 langchain-chroma

@@ -1,9 +1,15 @@
 import os
+import shutil
 import yt_dlp
 from pydub import AudioSegment
-import static_ffmpeg
-static_ffmpeg.add_paths()
 
+# Cloud par system ffmpeg, laptop par static_ffmpeg
+if shutil.which("ffmpeg") is None:
+    try:
+        import static_ffmpeg
+        static_ffmpeg.add_paths()
+    except Exception as e:
+        print(f"static_ffmpeg setup failed: {e}")
 
 # Create a directory to store downloaded audio files
 DOWNLOAD_DIR = "downloads"
